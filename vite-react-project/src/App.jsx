@@ -1,9 +1,10 @@
-
 import { useState } from 'react'
 import './App.scss'
 
 function App() {
+
  const [open, setOpen] = useState(false)
+ 
   return (
     <div className="App">
       <button onClick={()=>{setOpen(true)}} className="open-modal-btn">✨ Открыть окно</button>
