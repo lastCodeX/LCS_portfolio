@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import Result from './Components/Result'
 import Game from './Components/Game'
 import './App.scss'
@@ -25,11 +26,18 @@ const questions = [
 ]
 
 function App() {
+
+  const [step, setStep] = useState(0)
+  const question = questions[step]
+  const progressVol = Math.round(step/questions.length*100)
+
+  const choiceOption = (variant)=>{
+    setStep(step+1)
+  }
   
   return (
     <div className='App'>
-      {/* <Result/> */}
-      <Game/>
+            {step != questions.length ? <Game question={question} choiceOption={choiceOption} progressVol={progressVol}/> : <Result/>}
     </div>
   )
 }

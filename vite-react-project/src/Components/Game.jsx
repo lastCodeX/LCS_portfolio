@@ -1,16 +1,25 @@
 import './Game.scss'
 
-const Game = ()=>{
-    return (
+const Game = ({question, choiceOption, progressVol})=>{
+
+    
+
+     return (
         <>
             <div className='progress'>
-                <div style={{width: '50%'}} className='progress__inner'></div>
+                <div style={{width: `${progressVol}%`}} className='progress__inner'></div>
             </div>
-            <h1>что такое useState?</h1>
+            <h1>{question.title}</h1>
             <ul>
-                <li>Это функция для хранения данных</li>
-                <li>Это глобальный стейт</li>
-                <li>Это когда нах ты никому не нужен</li>
+                {
+                    question.variants.map((text, variant)=>{
+                        return (
+                            <li key={text} onClick={()=>{
+                                choiceOption(variant)
+                            }}>{text}</li>
+                        )
+                    })
+                }
             </ul>
         </>
     )
