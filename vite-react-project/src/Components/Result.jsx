@@ -1,11 +1,13 @@
 import './Result.scss'
 
-const Result = ()=>{
+const Result = ({correct, questionsLength})=>{
     return (
         <div className="result">
             <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" />
-            <h2>Вы отгадали 3 ответа из 10</h2>
+            <h2>Вы отгадали {correct} ответа из {questionsLength}</h2>
+            <a href="/">
             <button>Попробовать снова</button>
+            </a>
         </div>
     )
 }

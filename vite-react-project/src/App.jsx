@@ -28,16 +28,22 @@ const questions = [
 function App() {
 
   const [step, setStep] = useState(0)
+  const [correct, setCorrect] = useState(0)
   const question = questions[step]
-  const progressVol = Math.round(step/questions.length*100)
+  const questionsLength = questions.length
+  const progressVol = Math.round(step/questionsLength*100)
 
   const choiceOption = (variant)=>{
     setStep(step+1)
+    if(variant === question.correct){
+      setCorrect(correct+1)
+    }
   }
   
   return (
     <div className='App'>
-            {step != questions.length ? <Game question={question} choiceOption={choiceOption} progressVol={progressVol}/> : <Result/>}
+            {step != questionsLength ? <Game question={question} choiceOption={choiceOption} progressVol={progressVol}/> 
+            : <Result correct={correct} questionsLength={questionsLength}/>}
     </div>
   )
 }
