@@ -1,10 +1,11 @@
-import './App.css'
+import './App.scss'
+import Success from './Components/Success/Success'
 
 function App() {
 
   return (
     <div className='App'>
-      123
+      <Success/>
     </div>
   )
 }
