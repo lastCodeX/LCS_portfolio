@@ -1,4 +1,4 @@
-import {ContentLoader} from 'react-content-loader'
+import ContentLoader from 'react-content-loader'
 
 const Skeleton = () => {
     return (
@@ -17,3 +17,4 @@ const Skeleton = () => {
     )
 }
 
+export default Skeleton

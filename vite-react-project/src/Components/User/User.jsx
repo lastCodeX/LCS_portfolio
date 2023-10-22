@@ -1,6 +1,6 @@
 import './User.scss'
 
- const User = () => {
+const User = () => {
     return (
         <li>
             <div>
@@ -20,3 +20,4 @@ import './User.scss'
     )
 }
 
+export default User
