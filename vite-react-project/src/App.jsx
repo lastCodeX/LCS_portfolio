@@ -7,6 +7,7 @@ function App() {
   const [users, setUsers] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [invites, setInvites] = useState([])
+  const [success, setSuccess] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   
 
@@ -31,17 +32,24 @@ function App() {
     }
   }
 
+  const onClickSendInvites = ()=>{
+    setSuccess(true)
+  }
+
   return (
     <div className='App'>
-      {/* <Success/> */}
-      <Users 
+      {success ? <Success count={invites.length}/> : 
+        <Users 
         searchValue={searchValue}
         onChangeSearchValue={onChangeSearchValue}
         isLoading={isLoading}
         items={users}
         invites={invites}
         onClickInvite={onClickInvite}
+        onClickSendInvites={onClickSendInvites}
       />
+    }
+      
     </div>
   )
 }
