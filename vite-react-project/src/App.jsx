@@ -1,3 +1,4 @@
+import Block from "./Components/Block"
 import './App.scss'
 
 function App() {
