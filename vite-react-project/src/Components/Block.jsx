@@ -1,6 +1,6 @@
 import "./Block.scss"
 
-const defaultCurrencies = ['RUB', 'USD', 'EUR', 'GPB']
+const defaultCurrencies = ['RUB', 'USD', 'EUR', 'GBP']
 
 const Block = ({value, currency, onChangeCurrency, onChangeValue})=>{
     return (
@@ -8,7 +8,7 @@ const Block = ({value, currency, onChangeCurrency, onChangeValue})=>{
             <ul className="currencies">
                 {
                     defaultCurrencies.map((cur)=>(
-                        <li onClick={()=> onChangeCurrency(cur)}
+                        <li onClick={() => onChangeCurrency(cur)}
                             className={currency === cur ? 'active' : ''}
                             key={cur}>
                             {cur}
@@ -21,7 +21,7 @@ const Block = ({value, currency, onChangeCurrency, onChangeValue})=>{
                     </svg>
                 </li>
             </ul>
-            <input value={value} onChange={(e)=> onChangeValue(e.target.value)} type="number" placeholder={0} />
+            <input value={value} type="number" onChange={(e) => onChangeValue(e.target.value)}  placeholder={0} />
         </div>
 
     )
